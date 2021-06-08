@@ -23,14 +23,7 @@ namespace WindowsFormsApp1
         private void Btn_Guess_Click(object sender, EventArgs e)
         {
             int counter = int.Parse(Lbl_counter.Text);
-            if (counter == 0)
-            {
-                MessageBox.Show("Game Over ");
-                Lbl_counter.Text = "7";
-                Btn_Guess.Text = "Try Again";
-                value = randomGenerator.Next(1, 100);
-                return;
-            }
+           
             int guess = int.Parse(Txt_Number.Text);
             if (guess > value)
             {
@@ -50,13 +43,15 @@ namespace WindowsFormsApp1
             if (guess== value)
             {
                 Btn_Guess.Text = "Try Again";
-                Lbl_counter.Text = "7";               
+          
+                Lbl_counter.Text = "7";
                 value = randomGenerator.Next(1, 100);
             }
 
            else if (Lbl_counter.Text=="0")
             {
                 MessageBox.Show("Game Over ");
+           
                 Lbl_counter.Text = "7";
                 Btn_Guess.Text = "Try Again";              
                 Lbl_Result.Text = "";
